@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84B0DD521D2F447B003E1D02 /* MyButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B0DD511D2F447B003E1D02 /* MyButtonViewController.m */; };
+		84B0DD551D2F448D003E1D02 /* LikeButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B0DD541D2F448D003E1D02 /* LikeButtonViewController.m */; };
 		84C39B0E1D2E657300BAE781 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C39B0D1D2E657300BAE781 /* main.m */; };
 		84C39B111D2E657300BAE781 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C39B101D2E657300BAE781 /* AppDelegate.m */; };
 		84C39B141D2E657300BAE781 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C39B131D2E657300BAE781 /* ViewController.m */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84B0DD501D2F447B003E1D02 /* MyButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButtonViewController.h; sourceTree = "<group>"; };
+		84B0DD511D2F447B003E1D02 /* MyButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButtonViewController.m; sourceTree = "<group>"; };
+		84B0DD531D2F448D003E1D02 /* LikeButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeButtonViewController.h; sourceTree = "<group>"; };
+		84B0DD541D2F448D003E1D02 /* LikeButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeButtonViewController.m; sourceTree = "<group>"; };
 		84C39B091D2E657300BAE781 /* my.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = my.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C39B0D1D2E657300BAE781 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84C39B0F1D2E657300BAE781 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +109,10 @@
 			children = (
 				84C39B0F1D2E657300BAE781 /* AppDelegate.h */,
 				84C39B101D2E657300BAE781 /* AppDelegate.m */,
+				84B0DD501D2F447B003E1D02 /* MyButtonViewController.h */,
+				84B0DD511D2F447B003E1D02 /* MyButtonViewController.m */,
+				84B0DD531D2F448D003E1D02 /* LikeButtonViewController.h */,
+				84B0DD541D2F448D003E1D02 /* LikeButtonViewController.m */,
 				84C39B121D2E657300BAE781 /* ViewController.h */,
 				84C39B131D2E657300BAE781 /* ViewController.m */,
 				84C39B151D2E657300BAE781 /* Main.storyboard */,
@@ -270,8 +280,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B0DD521D2F447B003E1D02 /* MyButtonViewController.m in Sources */,
 				84C39B141D2E657300BAE781 /* ViewController.m in Sources */,
 				84C39B111D2E657300BAE781 /* AppDelegate.m in Sources */,
+				84B0DD551D2F448D003E1D02 /* LikeButtonViewController.m in Sources */,
 				84C39B0E1D2E657300BAE781 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +508,7 @@
 				84C39B381D2E657300BAE781 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84C39B391D2E657300BAE781 /* Build configuration list for PBXNativeTarget "myTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +517,7 @@
 				84C39B3B1D2E657300BAE781 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84C39B3C1D2E657300BAE781 /* Build configuration list for PBXNativeTarget "myUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +526,7 @@
 				84C39B3E1D2E657300BAE781 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
