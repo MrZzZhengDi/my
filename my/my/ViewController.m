@@ -22,6 +22,8 @@
 @property (nonatomic,assign) NSInteger buttonTag;
 
 @property (nonatomic,strong) UIButton *selcedButton;
+
+@property (nonatomic,strong) UIView *slideView;
 @end
 
 @implementation ViewController
@@ -69,44 +71,41 @@
     self.bigScroll.scrollEnabled = NO;
     self.bigScroll.contentSize = CGSizeMake(contentX, 0);
     self.bigScroll.pagingEnabled = YES;
-    
     myButton.selected = YES;
     self.selcedButton = myButton;
-    
+    self.slideView = [[UIView alloc] initWithFrame:CGRectMake(w/2 - 60 + 10, 64-8, 60 - 20, 2)];
+    _slideView.backgroundColor = [UIColor whiteColor];
+    [self.navView addSubview:_slideView];
     //5.添加默认子控制器 （第一个）
-    UIViewController *vc1 = [self.childViewControllers objectAtIndex:0];
-    UIViewController *vc2 = [self.childViewControllers objectAtIndex:1];
-    vc1.view.frame = CGRectMake(0, 0, w, (h-64));
-    vc2.view.frame = CGRectMake(w, 0, w, (h-64));
-    [self.bigScroll addSubview:vc1.view];
-    [self.bigScroll addSubview:vc2.view];
-    
+    UIViewController *vc = [self.childViewControllers objectAtIndex:0];
+    vc.view.frame = CGRectMake(0, 0, w, h-64);
+    [self.bigScroll addSubview:vc.view];
     [self.view bringSubviewToFront:_navView];
-    
 }
 
 - (void)scollView:(UIButton *)button
 {
-    if (button.tag == 1001 && button.selected == NO) {
+    if (button.selected == NO) {
+        NSInteger index = button.tag - 1000;
+        UIViewController *vc = [self.childViewControllers objectAtIndex:index];
+        if (index) {
+            vc.view.frame = CGRectMake(w * index, 0, w, h- 64);
+            [self.bigScroll addSubview:vc.view];
+        }
         button.selected = YES;
         UIButton *selBtn = [self.navView viewWithTag:self.selcedButton.tag];
         selBtn.selected = NO;
         self.selcedButton = button;
         CGPoint point = CGPointMake((button.tag - 1000)*w, self.bigScroll.contentOffset.y);
         [self.bigScroll setContentOffset:point animated:YES];
-    } else if (button.tag == 1000 && button.selected == NO) {
-        button.selected = YES;
-        UIButton *selBtn = [self.navView viewWithTag:self.selcedButton.tag];
-        selBtn.selected = NO;
-        self.selcedButton = button;
-        CGPoint point = CGPointMake((button.tag - 1000)*w, self.bigScroll.contentOffset.y);
-        [self.bigScroll setContentOffset:point animated:YES];
+        [self changeSliderTo:button.frame.origin.x];
     }
 }
 
-/**
- *  结束滚动后调用 (代码导致)
- */
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+- (void)changeSliderTo:(CGFloat)point
+{
+    [UIView animateWithDuration:0.2 animations:^{
+        _slideView.frame = CGRectMake(point + 10, 64-8, 60 - 20, 2);
+    }];
 }
 @end

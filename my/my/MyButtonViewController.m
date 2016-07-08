@@ -20,6 +20,16 @@
     self.view.backgroundColor = [UIColor yellowColor];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"MyButtonViewController --> viewWillAppear 即将出现");
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"MyButtonViewController --> viewWillDisappear 即将消失");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
