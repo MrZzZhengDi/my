@@ -13,7 +13,7 @@
 #define w [UIScreen mainScreen].bounds.size.width
 #define h [UIScreen mainScreen].bounds.size.height
 
-@interface ViewController ()<UIScrollViewDelegate>
+@interface ViewController ()
 
 @property (nonatomic,strong) UIScrollView *bigScroll;
 
@@ -32,8 +32,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _navView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, w, 64)];
-    [self.view addSubview:_navView];
     _navView.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:_navView];
+    
     
     UIButton *myButton = [UIButton buttonWithType:UIButtonTypeCustom];
     myButton.frame = CGRectMake(w/2 - 60, 20, 60, 44);
@@ -53,11 +54,11 @@
     [likeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [_navView addSubview:likeButton];
     
+    
     self.bigScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, w, h-64)];
     self.bigScroll.alwaysBounceHorizontal = YES;
     self.bigScroll.showsHorizontalScrollIndicator = NO;
     self.bigScroll.showsVerticalScrollIndicator = NO;
-    self.bigScroll.delegate = self;
     [self.view addSubview:self.bigScroll];
     
     //3.添加子控制器
