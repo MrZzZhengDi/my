@@ -16,13 +16,9 @@
 @interface ViewController ()
 
 @property (nonatomic,strong) UIScrollView *bigScroll;
-
 @property (nonatomic,strong) UIView *navView;
-
 @property (nonatomic,assign) NSInteger buttonTag;
-
 @property (nonatomic,strong) UIButton *selcedButton;
-
 @property (nonatomic,strong) UIView *slideView;
 @end
 
