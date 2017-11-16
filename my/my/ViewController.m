@@ -20,6 +20,7 @@
 @property (nonatomic,assign) NSInteger buttonTag;
 @property (nonatomic,strong) UIButton *selcedButton;
 @property (nonatomic,strong) UIView *slideView;
+
 @end
 
 @implementation ViewController
